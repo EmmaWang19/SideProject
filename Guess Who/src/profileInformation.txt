@@ -1,0 +1,10 @@
+YES|Olivia|curly|brown|blue|female
+YES|Emma|straight|red|brown|female
+YES|Ava|curly|blond|brown|female
+YES|Charlotte|straight|blond|blue|female
+YES|Sophie|curly|brown|blue|female
+YES|James|straight|red|brown|male
+YES|Ben|curly|red|brown|male
+YES|Will|straight|blond|blue|male
+YES|David|curly|brown|brown|male
+YES|Chris|straight|blond|blue|male

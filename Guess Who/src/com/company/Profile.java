@@ -10,7 +10,7 @@ private String gender;
 private String isAvailable;
 
 //Constructor
-    public Profile(String isAvailable,String name, String hairStyle, String hairColor, String eyeColor, String gender ){
+    public Profile(){
         this.name=name;
         this.hairStyle=hairStyle;
         this.hairColor=hairColor;
@@ -18,8 +18,8 @@ private String isAvailable;
         this.gender=gender;
         this.isAvailable=isAvailable;
     }
-    public void printProfile(){
-        System.out.println("Available? "+isAvailable+" Name: "+name+",  Hair Style: "+hairStyle+",  Hair Color: "+hairColor+",  Eye Color: "+eyeColor
+    public String printProfile(){
+        return ("Available? "+isAvailable+" Name: "+name+",  Hair Style: "+hairStyle+",  Hair Color: "+hairColor+",  Eye Color: "+eyeColor
         +",  Gender: "+gender);
     }
 
