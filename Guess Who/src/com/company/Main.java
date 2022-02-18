@@ -91,118 +91,8 @@ public class Main {
                                 System.out.println("So Close! Maybe try to sort by some features? Please select features from feature list. ");
                                 displayFeatureName(featureNameList);
                                 String guessFeature = userInput.nextLine();
-//Select from feature names.
-                                switch (guessFeature) {
-//Select feature 1: Hair Style.
-                                    case "1":
-                                        Map<String, String> hairStyleMap = new HashMap<>();
-                                        hairStyleMap.put("1", "curly");
-                                        hairStyleMap.put("2", "straight");
-
-                                        System.out.println("Please select hair style feature: ");
-                                        displayHairStyleFeature(hairStyleOptions);
-                                        System.out.println("Please choose feature options: ");
-                                        String guessHairStyleOption = userInput.nextLine().toLowerCase();
-
-                                        if (randomProfile.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
-                                            for (Profile availableAdjust : profileList) {
-                                                if (!availableAdjust.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
-                                                    availableAdjust.setIsAvailable("NO");
-                                                }
-                                            } System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
-                                        } else {
-                                            for (Profile availableAdjust : profileList) {
-                                                if (availableAdjust.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
-                                                    availableAdjust.setIsAvailable("NO");
-                                                }
-                                            } System.out.println("You selected wrong feature.");
-                                        }
-                                        break;
-//Select feature 2: Hair Color.
-                                    case "2":
-                                        Map<String, String> hairColorMap = new HashMap<>();
-                                        hairColorMap.put("1", "blond");
-                                        hairColorMap.put("2", "brown");
-                                        hairColorMap.put("3", "red");
-
-                                        System.out.println("Please select hair color feature: ");
-                                        displayHairColorFeature(hairColorOptions);
-                                        System.out.println("Please choose feature options: ");
-                                        String guessHairColorOption = userInput.nextLine().toLowerCase();
-
-                                        if (randomProfile.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
-
-                                            for (Profile availableAdjust : profileList) {
-                                                if (!availableAdjust.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
-                                                    availableAdjust.setIsAvailable("NO");
-                                                }
-                                            }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
-
-                                        } else {
-
-                                            for (Profile availableAdjust : profileList) {
-                                                if (availableAdjust.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
-                                                    availableAdjust.setIsAvailable("NO");
-                                                }
-                                            }System.out.println("You selected wrong feature. \n");
-                                        }
-                                        break;
-//Select feature 3: Eye Color.
-                                    case "3":
-                                        Map<String, String> eyeColorMap = new HashMap<>();
-                                        eyeColorMap.put("1", "blue");
-                                        eyeColorMap.put("2", "brown");
-
-                                        System.out.println("Please select eye color feature: ");
-                                        displayEyeColorFeature(eyeColorOptions);
-                                        System.out.println("Please choose feature options: ");
-                                        String guessEyeColorOption = userInput.nextLine().toLowerCase();
-                                        if (randomProfile.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
-
-                                            for (Profile availableAdjust : profileList) {
-                                                if (!availableAdjust.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
-                                                    availableAdjust.setIsAvailable("NO");
-                                                }
-                                            }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
-                                        } else {
-
-                                            for (Profile availableAdjust : profileList) {
-                                                if (availableAdjust.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
-                                                    availableAdjust.setIsAvailable("NO");
-                                                }
-                                            }System.out.println("You selected wrong feature. \n");
-                                        }
-                                        break;
-//Select feature 4: Gender.
-                                    case "4":
-                                        Map<String, String> genderMap = new HashMap<>();
-                                        genderMap.put("1", "female");
-                                        genderMap.put("2", "male");
-
-                                        System.out.println("Please select gender feature: ");
-                                        displayGenderFeature(genderOptions);
-                                        System.out.println("Please choose feature options: ");
-                                        String guessGenderOption = userInput.nextLine().toLowerCase();
-                                        if (randomProfile.getGender().equals(genderMap.get(guessGenderOption))) {
-
-                                            for (Profile availableAdjust : profileList) {
-                                                if (!availableAdjust.getGender().equals(genderMap.get(guessGenderOption))) {
-                                                    availableAdjust.setIsAvailable("NO");
-                                                }
-                                            }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
-                                        } else {
-
-                                            for (Profile availableAdjust : profileList) {
-                                                if (availableAdjust.getGender().equals(genderMap.get(guessGenderOption))) {
-                                                    availableAdjust.setIsAvailable("NO");
-                                                }
-                                            }System.out.println("You selected wrong feature. \n");
-                                        }
-                                        break;
-                                    default:
-                                        System.out.println("Selection is invalid. Please select from provided selections.");
-                                        break;
-                                }
+                                featureGuessProcess(guessFeature,hairStyleOptions, userInput,randomProfile,
+                                        profileList,hairColorOptions,eyeColorOptions,genderOptions );
                             }
                         }
                     }
@@ -211,118 +101,8 @@ public class Main {
                     System.out.println("Select by features might help. Please select features from feature list. ");
                     displayFeatureName(featureNameList);
                     String guessFeature = userInput.nextLine();
-                    switch (guessFeature) {
-//Select feature 1: Hair Style.
-                        case "1":
-                            Map<String,String> hairStyleMap = new HashMap<>();
-                            hairStyleMap.put("1","curly");
-                            hairStyleMap.put("2","straight");
-
-                            System.out.println("Please select hair style feature: ");
-                            displayHairStyleFeature(hairStyleOptions);
-                            System.out.println("Please choose feature options: ");
-                            String guessHairStyleOption = userInput.nextLine().toLowerCase();
-
-                            if (randomProfile.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
-
-                                for (Profile availableAdjust : profileList) {
-                                    if (!availableAdjust.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
-                                        availableAdjust.setIsAvailable("NO");
-                                    }
-                                }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
-                            } else {
-
-                                for (Profile availableAdjust : profileList) {
-                                    if (availableAdjust.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
-                                        availableAdjust.setIsAvailable("NO");
-                                    }
-                                }System.out.println("You selected wrong feature. \n");
-                            }
-                            break;
-//Select feature 2: Hair Color.
-                        case "2":
-                            Map<String,String> hairColorMap = new HashMap<>();
-                            hairColorMap.put("1","blond");
-                            hairColorMap.put("2","brown");
-                            hairColorMap.put("3","red");
-
-                            System.out.println("Please select hair color feature: ");
-                            displayHairColorFeature(hairColorOptions);
-                            System.out.println("Please choose feature options: ");
-                            String guessHairColorOption = userInput.nextLine().toLowerCase();
-
-                            if (randomProfile.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
-
-                                for (Profile availableAdjust : profileList) {
-                                    if (!availableAdjust.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
-                                        availableAdjust.setIsAvailable("NO");
-                                    }
-                                }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
-                            } else {
-
-                                for (Profile availableAdjust : profileList) {
-                                    if (availableAdjust.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
-                                        availableAdjust.setIsAvailable("NO");
-                                    }
-                                }System.out.println("You selected wrong feature. \n");
-                            }
-                            break;
-//Select feature 3: Eye Color.
-                        case "3":
-                            Map<String,String> eyeColorMap = new HashMap<>();
-                            eyeColorMap.put("1","blue");
-                            eyeColorMap.put("2","brown");
-
-                            System.out.println("Please select eye color feature: ");
-                            displayEyeColorFeature(eyeColorOptions);
-                            System.out.println("Please choose feature options: ");
-                            String guessEyeColorOption = userInput.nextLine().toLowerCase();
-                            if (randomProfile.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
-
-                                for (Profile availableAdjust : profileList) {
-                                    if (!availableAdjust.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
-                                        availableAdjust.setIsAvailable("NO");
-                                    }
-                                }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
-                            } else {
-
-                                for (Profile availableAdjust : profileList) {
-                                    if (availableAdjust.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
-                                        availableAdjust.setIsAvailable("NO");
-                                    }
-                                }System.out.println("You selected wrong feature. \n");
-                            }
-                            break;
-//Select feature 4: Gender.
-                        case "4":
-                            Map<String,String> genderMap = new HashMap<>();
-                            genderMap.put("1","female");
-                            genderMap.put("2","male");
-
-                            System.out.println("Please select gender feature: ");
-                            displayGenderFeature(genderOptions);
-                            System.out.println("Please choose feature options: ");
-                            String guessGenderOption = userInput.nextLine().toLowerCase();
-                            if (randomProfile.getGender().equals(genderMap.get(guessGenderOption))) {
-
-                                for (Profile availableAdjust : profileList) {
-                                    if (!availableAdjust.getGender().equals(genderMap.get(guessGenderOption))) {
-                                        availableAdjust.setIsAvailable("NO");
-                                    }
-                                }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
-                            } else {
-
-                                for (Profile availableAdjust : profileList) {
-                                    if (availableAdjust.getGender().equals(genderMap.get(guessGenderOption))) {
-                                        availableAdjust.setIsAvailable("NO");
-                                    }
-                                }System.out.println("You selected wrong feature. \n");
-                            }
-                            break;
-                        default:
-                            System.out.println("Selection is invalid. Please select from provided selections.");
-                            break;
-                    }
+                    featureGuessProcess(guessFeature,hairStyleOptions, userInput,randomProfile,
+                            profileList,hairColorOptions,eyeColorOptions,genderOptions );
                 } else {
 //If input for selection is invalid, bring back to guess selection.
                     System.out.println("Selection is invalid. Please select from provided options.");
@@ -372,6 +152,121 @@ public class Main {
                         +updateProfile.getGender());
             }
         } System.out.println("**********************************************************************************************");
+    }
+
+    public void featureGuessProcess(String guessFeature,List<String> hairStyleOptions, Scanner userInput,Profile randomProfile,
+    List<Profile> profileList,List<String>hairColorOptions,List<String>eyeColorOptions,List<String >genderOptions ){
+        switch (guessFeature) {
+//Select feature 1: Hair Style.
+            case "1":
+                Map<String, String> hairStyleMap = new HashMap<>();
+                hairStyleMap.put("1", "curly");
+                hairStyleMap.put("2", "straight");
+
+                System.out.println("Please select hair style feature: ");
+                displayHairStyleFeature(hairStyleOptions);
+                System.out.println("Please choose feature options: ");
+                String guessHairStyleOption = userInput.nextLine().toLowerCase();
+
+                if (randomProfile.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
+                    for (Profile availableAdjust : profileList) {
+                        if (!availableAdjust.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
+                            availableAdjust.setIsAvailable("NO");
+                        }
+                    } System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
+                } else {
+                    for (Profile availableAdjust : profileList) {
+                        if (availableAdjust.getHairStyle().equals(hairStyleMap.get(guessHairStyleOption))) {
+                            availableAdjust.setIsAvailable("NO");
+                        }
+                    } System.out.println("You selected wrong feature.");
+                }
+                break;
+//Select feature 2: Hair Color.
+            case "2":
+                Map<String, String> hairColorMap = new HashMap<>();
+                hairColorMap.put("1", "blond");
+                hairColorMap.put("2", "brown");
+                hairColorMap.put("3", "red");
+
+                System.out.println("Please select hair color feature: ");
+                displayHairColorFeature(hairColorOptions);
+                System.out.println("Please choose feature options: ");
+                String guessHairColorOption = userInput.nextLine().toLowerCase();
+
+                if (randomProfile.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
+
+                    for (Profile availableAdjust : profileList) {
+                        if (!availableAdjust.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
+                            availableAdjust.setIsAvailable("NO");
+                        }
+                    }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
+
+                } else {
+
+                    for (Profile availableAdjust : profileList) {
+                        if (availableAdjust.getHairColor().equals(hairColorMap.get(guessHairColorOption))) {
+                            availableAdjust.setIsAvailable("NO");
+                        }
+                    }System.out.println("You selected wrong feature. \n");
+                }
+                break;
+//Select feature 3: Eye Color.
+            case "3":
+                Map<String, String> eyeColorMap = new HashMap<>();
+                eyeColorMap.put("1", "blue");
+                eyeColorMap.put("2", "brown");
+
+                System.out.println("Please select eye color feature: ");
+                displayEyeColorFeature(eyeColorOptions);
+                System.out.println("Please choose feature options: ");
+                String guessEyeColorOption = userInput.nextLine().toLowerCase();
+                if (randomProfile.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
+
+                    for (Profile availableAdjust : profileList) {
+                        if (!availableAdjust.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
+                            availableAdjust.setIsAvailable("NO");
+                        }
+                    }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
+                } else {
+
+                    for (Profile availableAdjust : profileList) {
+                        if (availableAdjust.getEyeColor().equals(eyeColorMap.get(guessEyeColorOption))) {
+                            availableAdjust.setIsAvailable("NO");
+                        }
+                    }System.out.println("You selected wrong feature. \n");
+                }
+                break;
+//Select feature 4: Gender.
+            case "4":
+                Map<String, String> genderMap = new HashMap<>();
+                genderMap.put("1", "female");
+                genderMap.put("2", "male");
+
+                System.out.println("Please select gender feature: ");
+                displayGenderFeature(genderOptions);
+                System.out.println("Please choose feature options: ");
+                String guessGenderOption = userInput.nextLine().toLowerCase();
+                if (randomProfile.getGender().equals(genderMap.get(guessGenderOption))) {
+
+                    for (Profile availableAdjust : profileList) {
+                        if (!availableAdjust.getGender().equals(genderMap.get(guessGenderOption))) {
+                            availableAdjust.setIsAvailable("NO");
+                        }
+                    }System.out.println(" You selected a correct feature! Nice job! Keep the good work!'\n");
+                } else {
+
+                    for (Profile availableAdjust : profileList) {
+                        if (availableAdjust.getGender().equals(genderMap.get(guessGenderOption))) {
+                            availableAdjust.setIsAvailable("NO");
+                        }
+                    }System.out.println("You selected wrong feature. \n");
+                }
+                break;
+            default:
+                System.out.println("Selection is invalid. Please select from provided selections.");
+                break;
+        }
     }
 
     public int countAvailable(List<Profile> profileList){
