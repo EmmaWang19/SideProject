@@ -15,7 +15,7 @@ public class Main {
         public void run () {
 //Game Starts. Set gameOn to true. Display welcome message.
             Boolean gameOn = true;
-            System.out.println("Welcome to Guess Who, here are list of profiles.");
+            displayWelcomeMessage();
             //<editor-fold desc="Create Feature Name List and Feature Option List">
             List<String> featureNameList = new ArrayList<>();
             featureNameList.add("hair style");
@@ -330,6 +330,33 @@ public class Main {
             }
         }
 
+    public void displayWelcomeMessage(){
+        System.out.print(" __       __  ________  __         ______    ______   __       __  ________        ________  ______                                            \n" +
+                "/  |  _  /  |/        |/  |       /      \\  /      \\ /  \\     /  |/        |      /        |/      \\                                           \n" +
+                "$$ | / \\ $$ |$$$$$$$$/ $$ |      /$$$$$$  |/$$$$$$  |$$  \\   /$$ |$$$$$$$$/       $$$$$$$$//$$$$$$  |                                          \n" +
+                "$$ |/$  \\$$ |$$ |__    $$ |      $$ |  $$/ $$ |  $$ |$$$  \\ /$$$ |$$ |__             $$ |  $$ |  $$ |                                          \n" +
+                "$$ /$$$  $$ |$$    |   $$ |      $$ |      $$ |  $$ |$$$$  /$$$$ |$$    |            $$ |  $$ |  $$ |                                          \n" +
+                "$$ $$/$$ $$ |$$$$$/    $$ |      $$ |   __ $$ |  $$ |$$ $$ $$/$$ |$$$$$/             $$ |  $$ |  $$ |                                          \n" +
+                "$$$$/  $$$$ |$$ |_____ $$ |_____ $$ \\__/  |$$ \\__$$ |$$ |$$$/ $$ |$$ |_____          $$ |  $$ \\__$$ |                                          \n" +
+                "$$$/    $$$ |$$       |$$       |$$    $$/ $$    $$/ $$ | $/  $$ |$$       |         $$ |  $$    $$/                                           \n" +
+                "$$/      $$/ $$$$$$$$/ $$$$$$$$/  $$$$$$/   $$$$$$/  $$/      $$/ $$$$$$$$/          $$/    $$$$$$/                                            \n" +
+                "                                                                                                                                               \n" +
+                "                                                                                                                                               \n" +
+                "                                                                                                                                               \n" +
+                "                                                        ______   __    __  ________   ______    ______         __       __  __    __   ______  \n" +
+                "                                                       /      \\ /  |  /  |/        | /      \\  /      \\       /  |  _  /  |/  |  /  | /      \\ \n" +
+                "                                                      /$$$$$$  |$$ |  $$ |$$$$$$$$/ /$$$$$$  |/$$$$$$  |      $$ | / \\ $$ |$$ |  $$ |/$$$$$$  |\n" +
+                "               Programed By: Emma Wang"+"                $$ | _$$/ $$ |  $$ |$$ |__    $$ \\__$$/ $$ \\__$$/       $$ |/$  \\$$ |$$ |__$$ |$$ |  $$ |\n" +
+                "                     02/17/2022"+"                       $$ |/    |$$ |  $$ |$$    |   $$      \\ $$      \\       $$ /$$$  $$ |$$    $$ |$$ |  $$ |\n" +
+                "                                                      $$ |$$$$ |$$ |  $$ |$$$$$/     $$$$$$  | $$$$$$  |      $$ $$/$$ $$ |$$$$$$$$ |$$ |  $$ |\n" +
+                "                                                      $$ \\__$$ |$$ \\__$$ |$$ |_____ /  \\__$$ |/  \\__$$ |      $$$$/  $$$$ |$$ |  $$ |$$ \\__$$ |\n" +
+                "                                                      $$    $$/ $$    $$/ $$       |$$    $$/ $$    $$/       $$$/    $$$ |$$ |  $$ |$$    $$/ \n" +
+                "                                                       $$$$$$/   $$$$$$/  $$$$$$$$/  $$$$$$/   $$$$$$/        $$/      $$/ $$/   $$/  $$$$$$/  \n" +
+                "                                                                                                                                               \n" +
+                "                                                                                                                                               \n"
+        );
+    }
+
     public void printProfiles(List<Profile>profileList){
         System.out.println("******************************** Available Profiles ******************************************");
         String hairStyleColumn = "           Hair Style: ";
@@ -344,7 +371,7 @@ public class Main {
                         +updateProfile.getEyeColor() +genderColumn.substring(updateProfile.getEyeColor().length())
                         +updateProfile.getGender());
             }
-        }
+        } System.out.println("**********************************************************************************************");
     }
 
     public int countAvailable(List<Profile> profileList){
